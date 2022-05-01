@@ -11,13 +11,23 @@
         </header>
 
         <form method="post">
+
+            {% csrf_token %}
+            
             <div class="input-wrapper">
                 <label for="user-name-id">Username</label>
+                {{ form.username}}
             </div>
 
             <div class="input-wrapper">
                 <label for="password-id">Password</label>
+                {{ form.password}}
             </div>
+            
+            {% comment %} mensaje de error de usuario o contraseña {% endcomment %}
+            {% if form.errors %}
+                <p>Usuario o contraseña incorrecto</p>
+            {% endif %}
 
             <button class="twitter-btn">Log in</button>
         </form>

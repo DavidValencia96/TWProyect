@@ -11,23 +11,29 @@
         </header>
 
         <form method="post">
-            {% csrf_token %}
+            
+            {% csrf_token %}  {% comment %} Incluimos el token {% endcomment %}
+
             <div class="input-wrapper">
                 <label for="user-name-id">First Name</label>
-
+                {{ form.first_name }}              
             </div>
             <div class="input-wrapper">
                 <label for="user-name-id">Username</label>
+                {{ form.username }}
             </div>
             <div class="input-wrapper">
                 <label for="user-name-id">Email</label>
+                {{form.email }}
             </div>
 
             <div class="input-wrapper">
                 <label for="password-id">Password</label>
+                {{form.password1 }}
             </div>
             <div class="input-wrapper">
-                <label for="password-id">Confirm Password</label>
+                <label for="password-id">Confirmar Password</label>
+                {{ form.password2 }}
             </div>
 
             <button class="twitter-btn">Registrarse</button>

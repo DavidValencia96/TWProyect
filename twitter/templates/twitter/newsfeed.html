@@ -1,5 +1,8 @@
 {% extends 'twitter/layout.html' %}
+{% load humanize %}
 {% block content %}
+
+
 <div id="main" class="container-fluid d-flex">
     <!-- Barra Izquierda -->
     <div class="sidebar m-5 d-none d-md-block">
@@ -7,13 +10,19 @@
             <div class="card " style="width: 18rem; text-align:center;border-radius: 20px;">
                 <img class="card-img-top rounded-circle"
                     style="width:60%; position: relative;left: 62px;padding-top: 20px;"
-                    src="https://i.pinimg.com/736x/ea/f2/2e/eaf22e6a189f76ed24054e2ca7feb00f.jpg" alt="Card image cap">
+                    src="{{request.user.profile.image.url}}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Tony Stark</h5>
-                    <h6 class="card-title font-weight-bold">@iron_man</h6>
+                    <h5 class="card-title font-weight-bold">
+                        {% comment %} ------> Nombre del usuario <------ {% endcomment %}
+                        {{request.user.first_name}} 
+                    </h5>
+                    <h6 class="card-title font-weight-bold">
+                        {% comment %} ------> @ del usuario <------ {% endcomment %}
+                        @{{request.user}}
+                    </h6>
 
-
-                    <p class="card-text">You know who i am. </p>
+                    {% comment %} ------> check al usuario que esta en sesión y mostrar la info <------ {% endcomment %}
+                    <p class="card-text"> {{ request.user.profile.bio}}</p>
                     <h6 class="card-title font-weight-bold">
                         100 Followers
                         100 Following
@@ -36,14 +45,21 @@
             <div class="d-flex">
                 <div class="col-xs">
                     <!-- Image form -->
-                    <img src="https://i.pinimg.com/736x/ea/f2/2e/eaf22e6a189f76ed24054e2ca7feb00f.jpg" alt=""
+                    <img src="{{request.user.profile.image.url}}" alt="imgProfileTweet"
                         class="avator">
                     <!-- Formulario -->
                 </div>
 
                 <!-- Formulario -->
-                <form class="col pr-0">
-                    <textarea class="form-control w-100" id="contentsBox" placeholder="What's happening?"></textarea>
+                <form class="col pr-0" method="post">
+
+                    {% csrf_token %}
+
+                    {% comment %}  Aqui es en donde incluiremos el formulario de contenido de tweet def home en views.py {% endcomment %}
+                    {{ form.content }}
+                    {% comment %} <textarea class="form-control w-100" id="contentsBox" placeholder="¿Qué está pasando?"></textarea> {% endcomment %}
+
+
                     <div class="container d-flex" style="padding: 1rem 0 0 0;">
                         <div id="leftBtn">
                             <div id="charBadge" class="badge badge-pill badge-primary ml-2"
@@ -72,12 +88,21 @@
             <!-- FOR LOOP HERE -->
             <div class="tweet-wrap" style="border-radius:20px">
                 <div class="tweet-header">
-                    <img src="https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png"
+                    <img src="{{ post.user.profile.image.url}}"
                         alt="" class="avator">
                     <div class="tweet-header-info">
-                        {{post.user.first_name}} <span>@{{post.user}}</span><span>. {{post.timestamp}}
+
+                        <a href="{% url 'profile' post.user %}">
+                            {{post.user.first_name}} 
+                        </a>
+
+                        <span>
+                            @{{post.user}}
                         </span>
-                        <p>{{post.content}} </p>
+                        <span> 
+                            {{post.timestamp | naturaltime}}
+                        </span>
+                        <p>{{post.content}}</p>
                     </div>
                 </div>
                 <div class="tweet-info-counts">
@@ -124,11 +149,16 @@
                     </div>
 
                     <!-- DELETE -->
+                    {% comment %} logica para validar que el tweet sea borrado unicamente por el creador del post {% endcomment %}
+                    {% if request.user == post.user %}
+
                     <div class="trash">
-                        <a href="#" style="background: white; border: none;">
+                        <a href="{% url 'delete' post.id %}" style="background: white; border: none;">
                             <i class="fa fa-trash-o" style="color:#657786; font-size: 20px" aria-hidden="true"></i>
                         </a>
                     </div>
+
+                    {% endif %}
                     <!-- END-DELETE -->
                 </div>
             </div>
