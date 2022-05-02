@@ -59,18 +59,6 @@ def profile(request, username):
     return render(request, 'twitter/profile.html', context)
 
 
-# def profile(request, username=None):
-#     current_user = request.user
-#     if username and username != current_user.username:
-#         user = User.objects.get(username=username)
-#         posts = user.posts.all()
-#     else:
-#         posts = current_user.posts.all()
-#         user = current_user
-#     return render(request, 'twitter/profile.html', {'user':user, 'posts':posts})
-
-# https://www.youtube.com/watch?v=06aDhOwqvfY&ab_channel=MundoPython encontrar solución a la linea 45
-
 @login_required
 def editar(request):
     if request.method == 'POST':
