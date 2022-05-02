@@ -1,6 +1,56 @@
-https://github.com/mundo-python/social_project/tree/initial_files
+Document path and def :: https://realpython.com/documenting-python-code/#docstring-formats
+
+connect to db :: https://fastapi.tiangolo.com/es/advanced/sql-databases-peewee/
+
+coment :: https://platzi.com/comentario/3025347/
+
+https://en.wikipedia.org/wiki/Markdown
+https://platzi.com/comentario/3025347/
 
 
-https://docs.djangoproject.com/en/4.0/ref/contrib/humanize/ // revisar page neewfeed linea 2
+importante ::: 
+https://www.fastapitutorial.com/blog/fastapi-jinja-login/
+https://www.youtube.com/watch?v=Of1V5JV6voc&ab_channel=NelsonCode
+https://uniwebsidad.com/libros/python/capitulo-14/envio-de-e-mail-desde-python
 
-https://docs.djangoproject.com/en/4.0/howto/static-files/ // manejo de imagenes , css , script
+pip installa sqlalchemy
+pip install PyMySQL
+pip install pyjwt
+pip install python-dotenv
+pip install requests
+
+'''
+para activar en ambiente virtual 
+
+para crear
+    python -m venv venv
+
+para activar desde cmd, ubicado en la carpeta donde este em venv
+    venv\Scripts\activate.bat
+
+para saber que modulos estan instalados en el proyecto 
+    pip freeze
+
+para compartir el proyecto con los mismos archivos y librerias a otros desarrolladores
+    pip freeze > requirements.txt
+
+para ver el archivo txt 
+    cat requirements.txt
+
+para instalar las depencias que se tienen en el proyecto
+    pip install -r requirements.txt
+para desactivar el venv
+    deactivate
+    
+    
+
+'''
+
+correr servidor ::: uvicorn main:app --reload
+
+
+
+git add -A 
+git status
+git commit -m "Se anexa redirect"
+git push origin daviddevps

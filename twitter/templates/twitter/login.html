@@ -7,7 +7,7 @@
         <header>
             <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp"
                 alt="twitter logo">
-            <h1>Inicia Sesión</h1>
+            <h1>Inicia Sesión en TWT</h1>
         </header>
 
         <form method="post">
@@ -33,8 +33,8 @@
         </form>
 
         <div class="footer">
-            <a href="#">Forget Password</a> .
-            <a href="#">Sign up to twitter</a>
+            {% comment %} <a href="#">Recuperar contraseña</a>  {% endcomment %}
+            <a href="{% url 'register' %}">¿Aún no tienes una cuenta? ¡Registrese ahora!</a>
         </div>
 
     </div>

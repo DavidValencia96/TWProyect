@@ -1,7 +1,7 @@
 {% extends 'twitter/layout.html' %}
 {% load humanize %}
-{% block content %}
 
+{% block content %}
 
 <div id="main" class="container-fluid d-flex">
     <!-- Barra Izquierda -->
@@ -24,16 +24,16 @@
                     {% comment %} ------> check al usuario que esta en sesión y mostrar la info <------ {% endcomment %}
                     <p class="card-text"> {{ request.user.profile.bio}}</p>
                     <h6 class="card-title font-weight-bold">
-                        100 Followers
-                        100 Following
+                        {% comment %} {{ request.user.profile.followers.count }} Followers {% endcomment %} 
+                        {% comment %} {{ request.user.profile.following.count }} Following  {% endcomment %} 
                     </h6>
                     <a href="#" class="btn  text-white rounded-pill">Mi perfil</a>
                 </div>
 
             </div>
-            <button id="addATweetLeft" onclick="addTweet()" type="button"
+            <a href="{% url 'editar' %}" id="addATweetLeft" onclick="addTweet()" type="button"
                 style="border-radius: 30px; font-size: 1.1rem; font-weight:bold;"
-                class="btn btn-lg btn-block mt-4 text-white ">Editar mi perfil</button>
+                class="btn btn-lg btn-block mt-4 text-white ">Editar mi perfil</a>
         </div>
     </div>
     <!-- End Barra Izquierda -->
@@ -64,7 +64,7 @@
                         <div id="leftBtn">
                             <div id="charBadge" class="badge badge-pill badge-primary ml-2"
                                 style="display: flex;align-items: center;width: 50%;justify-content: center;">
-                                <div id="charCountArea">140</div>
+                                <div id="charCountArea" >250</div>
                             </div>
                         </div>
 
@@ -82,7 +82,6 @@
 
         <!-- Tweets -->
         {% for post in posts %}
-
 
         <div id="tweetCards">
             <!-- FOR LOOP HERE -->
