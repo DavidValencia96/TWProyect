@@ -8,7 +8,7 @@ env.bak/
 venv.bak/
 
 # Archivos
-document.txt
+/document.txt
 
 # Cache py
 __pycache__
