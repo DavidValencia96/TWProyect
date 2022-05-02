@@ -10,6 +10,7 @@ venv.bak/
 # Archivos
 /document.txt
 
+
 # Cache py
 __pycache__
 *.pyc
