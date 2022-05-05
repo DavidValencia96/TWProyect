@@ -5,10 +5,16 @@ from django.contrib.auth.models import User
 from .models import Post, Profile
 
 class UserRegisterForm(UserCreationForm):
-    
+     
     class Meta:
         model = User
         fields = ['first_name', 'username', 'email', 'password1', 'password2']
+        attrs={
+            'class':'input-group-text',
+            'maxlength':'30',
+            'required': True
+        }
+    
     
 class PostForm(forms.ModelForm):
     content = forms.CharField(
@@ -19,6 +25,7 @@ class PostForm(forms.ModelForm):
                 'rows':'3',
                 'placeholder':'¿Qué está pasando?',
                 'maxlength':"250",
+                'required': True
             }
         )
     )
@@ -31,7 +38,12 @@ class PostForm(forms.ModelForm):
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['first_name', 'username']
+        # fields = ['first_name', 'username']
+        fields = ['first_name']
+        attrs={
+                'maxlength':"250",
+                'required': True
+        }
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:

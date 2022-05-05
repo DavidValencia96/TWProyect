@@ -15,11 +15,8 @@ urlpatterns = [
     path('profile/<str:username>/', views.profile, name='profile'),
     path('follow/<str:username>/', views.follow, name='follow'),
     path('unfollow/<str:username>/', views.unfollow, name='unfollow'),
-    
-
-
-    # path('profile/', views.profile, name='profile'),
-	# path('post/', views.post, name='post'),
+	# path('poster/<int:post_id>/', views.poster, name='poster'),
+     
 
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #añadimos la ruta media_root a la "urls" de las imagenes

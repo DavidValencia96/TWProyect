@@ -7,7 +7,7 @@
         <header>
             <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp"
                 alt="twitter logo">
-            <h1>Registrate en TWT</h1>
+            <h1 class="titleTweet">Registrate en aPP</h1>
         </header>
 
         <form method="post">
@@ -15,26 +15,30 @@
             {% csrf_token %}  {% comment %} Incluimos el token {% endcomment %}
 
             <div class="input-wrapper">
-                <label for="user-name-id">First Name</label>
+                <label for="user-name-id" class="input-group-text">Nombres</label>
                 {{ form.first_name }}              
             </div>
             <div class="input-wrapper">
-                <label for="user-name-id">Username</label>
+                <label for="user-name-id" class="input-group-text">Usuario</label>
                 {{ form.username }}
             </div>
             <div class="input-wrapper">
-                <label for="user-name-id">Email</label>
+                <label for="user-name-id" class="input-group-text">Email</label>
                 {{form.email }}
             </div>
 
             <div class="input-wrapper">
-                <label for="password-id">Password</label>
+                <label for="password-id" class="input-group-text">Contraseña</label>
                 {{form.password1 }}
             </div>
             <div class="input-wrapper">
-                <label for="password-id">Confirmar Password</label>
+                <label for="password-id" class="input-group-text">Confirmar contraseña</label>
                 {{ form.password2 }}
             </div>
+             {% comment %} mensaje de error de usuario o contraseña {% endcomment %}
+             {% if form.errors %}
+                <p>Valida los datos ingresados</p>
+            {% endif %}
 
             <button class="twitter-btn">Registrarse</button>
         </form>

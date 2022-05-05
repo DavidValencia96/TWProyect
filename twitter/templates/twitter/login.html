@@ -7,7 +7,7 @@
         <header>
             <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp"
                 alt="twitter logo">
-            <h1>Inicia Sesión en TWT</h1>
+            <h1 class="titleTweet">Inicia sesión en aPP</h1>
         </header>
 
         <form method="post">
@@ -15,12 +15,12 @@
             {% csrf_token %}
             
             <div class="input-wrapper">
-                <label for="user-name-id">Username</label>
+                <label for="user-name-id" class="input-group-text">Usuario</label>
                 {{ form.username}}
             </div>
 
             <div class="input-wrapper">
-                <label for="password-id">Password</label>
+                <label for="password-id" class="input-group-text">Contraseña</label>
                 {{ form.password}}
             </div>
             
