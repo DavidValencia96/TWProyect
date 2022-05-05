@@ -51,7 +51,7 @@ def delete(request, post_id):
 
 def profile(request, username):
     user = User.objects.get(username=username)
-    posts = user.posts.all()
+    posts = user.post.all()
     context = {
         'user': user, 
         'posts': posts
@@ -100,5 +100,7 @@ def unfollow(request, username):
     rel.delete()
     messages.success(request, f'Ya no sigues a {username}')
     return redirect('home')
+    
+    
     
     
