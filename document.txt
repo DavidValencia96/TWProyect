@@ -46,11 +46,12 @@ para desactivar el venv
 
 '''
 
-correr servidor ::: uvicorn main:app --reload
+correr servidor :::
+ uvicorn main:app --reload
 
 
 
 git add -A 
 git status
-git commit -m "Se anexa redirect"
-git push origin daviddevps
+git commit -m "comentario"
+git push origin "rama nueva"
