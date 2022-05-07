@@ -1,7 +1,5 @@
 import http.client
-import base64 as b64
 import json
-from datetime import datetime
 
 
 
