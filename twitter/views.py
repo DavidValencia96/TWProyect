@@ -1,4 +1,9 @@
-from django.shortcuts import redirect, render, get_object_or_404
+import http.client
+import base64 as b64
+import json
+from datetime import datetime
+
+from django.shortcuts import redirect, render
 from .models import Post, Relationship
 from .forms import UserRegisterForm, PostForm, ProfileUpdateForm, UserUpdateForm
 from django.contrib.auth.models import User
@@ -8,7 +13,7 @@ from django.contrib import messages
 
 
 # el login es requerido para ejecutar algunas funciones
-@login_required
+# @login_required
 def home(request):
     posts = Post.objects.all()
     
@@ -26,6 +31,8 @@ def home(request):
         'posts': posts, 
         'form': form,
     }
+    
+    
     return render(request, 'twitter/newsfeed.html', context)
 
 def register(request):
@@ -48,10 +55,18 @@ def delete(request, post_id):
     post.delete()
     return redirect('home')
 
+# def poster(request, post_id):
+#     user = User.objects.get(id=post_id)
+#     posts = User.post.id
+#     context = {
+#         'user': user, 
+#         'posts': posts
+#     }
+#     return redirect(request, 'twitter/poster.html', context)
 
 def profile(request, username):
     user = User.objects.get(username=username)
-    posts = user.posts.all()
+    posts = user.post.all()
     context = {
         'user': user, 
         'posts': posts
@@ -95,10 +110,12 @@ def follow(request, username):
 def unfollow(request, username):
     current_user = request.user
     to_user = User.objects.get(username=username)
-    to_user_id = to_user_id
+    to_user_id = to_user.id
     rel = Relationship.objects.get(from_user=current_user.id, to_user=to_user_id)
     rel.delete()
     messages.success(request, f'Ya no sigues a {username}')
     return redirect('home')
+    
+    
     
     

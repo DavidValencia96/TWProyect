@@ -1,5 +1,5 @@
 body {
-  background: #E6E8E9; /*15202b*/;
+  background: #15202b; /*15202b*/;
   font-family: 'Asap', sans-serif;
   font-family: 'Roboto', sans-serif;
 }
@@ -9,7 +9,7 @@ img {
 }
 
 .navbar {
-  background-color: #1E96EB /*#E0245E*/;
+  background-color: #1E96EB /*#1E96EB  -- #E0245E*/;
 }
 
 .navbar-brand {
@@ -25,6 +25,8 @@ img {
 .card {
   border: none;
 }
+
+
 
 .card-header {
   background-color: #1E96EB /*#E0245E*/;
@@ -54,8 +56,61 @@ img {
   padding: 0;
 }
 
+
+
+.menuNAv {
+  /* position: fixed;
+  z-index: 100; */
+  padding: 0;
+}
+
+.titleTweet{
+  text-align:center;
+  color: #ffff;
+}
+
+.title-published-twet{ 
+  text-align:center;
+  color: #000000;
+  font-size: 20px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  margin-block-start: 5px;
+}
+.footer{
+  text-align:center;
+  color: #15202b96;
+  margin: 2px;
+}
+
+.name-username {
+  color: #15202bc3;
+}
+
+.follow{
+  color: #15202bc3;
+}
+
+
+.data-perfil{
+  width: 18rem; 
+  text-align:center;
+  border-radius: 10px;
+
+}
+
+
+.data-perfil-follow ul li{
+  width: 18rem; 
+  text-align:center;
+  border-radius: 10px;
+  color: #227ccb;
+  text-decoration: none;
+
+}
+
 .tweet-wrap {
-  max-width: 490px;
+  max-width: 600px;
   background: #fff;
   margin: 0 auto;
   margin-top: 50px;
@@ -145,6 +200,10 @@ img {
   left: -8px;
   font-size: 1rem;
   height: 100%;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
 }
 
 a:link {
@@ -160,7 +219,7 @@ a:link {
 
 /* LOGIN PAGE*/
 .login-page{
-  background: white;
+  background-color: #15202b;
 }
 
 .twitter-login-box {
