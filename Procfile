@@ -3,6 +3,6 @@
 
 // web: gunicorn django_proyect.wsgi
 
-web: gunicorn appname.wsgi:application --log-file - --log-level debug
+web: gunicorn social_proyect.wsgi:application --log-file - --log-level debug
 python manage.py collectstatic --noinput
 manage.py migrate
