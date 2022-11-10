@@ -27,9 +27,14 @@ SECRET_KEY = 'django-insecure-s#k$b@#f56*_)pdf$0ueq!t(n=m_uicdl@m&tk%cjbm5*ikwyq
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '*',
     '0.0.0.0',
-    '127.0.0.0',
-    'https://app-method.herokuapp.com'
+    '127.0.0.1',
+    'https://app-method.herokuapp.com',
+    'app-method.herokuapp.com',
+    'http://app-method.herokuapp.com/',
+    'https://app-method.herokuapp.com/',
+    'app-method.herokuapp.com/',
 ]
 
 
