@@ -129,6 +129,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STACTI_ROOT = os.path.join(BASE_DIR, 'stacticfiles')
 
+
 # Anexamos el redirect del login al home
 
 LOGIN_REDIRECT_URL = 'home'
