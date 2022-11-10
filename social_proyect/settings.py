@@ -127,6 +127,8 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#Update connet to Heroku
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Anexamos el redirect del login al home
