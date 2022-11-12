@@ -7,7 +7,7 @@
         <header>
             <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp"
                 alt="twitter logo">
-            <h1 class="titleTweet">Inicia sesión en aPP</h1>
+            <h1 class="titleTweet">Inicia sesión en TW_MAD</h1>
         </header>
 
         <form method="post">
@@ -26,15 +26,15 @@
             
             {% comment %} mensaje de error de usuario o contraseña {% endcomment %}
             {% if form.errors %}
-                <p>Usuario o contraseña incorrecto</p>
+                <p>Usuario o contraseña incorrectas</p>
             {% endif %}
 
-            <button class="twitter-btn">Log in</button>
+            <button class="twitter-btn">Inicio de sesión</button>
         </form>
 
         <div class="footer">
             {% comment %} <a href="#">Recuperar contraseña</a>  {% endcomment %}
-            <a href="{% url 'register' %}">¿Aún no tienes una cuenta? ¡Registrese ahora!</a>
+            <a href="{% url 'register' %}">¿Aún no tienes una cuenta? ¡Registrase ahora!</a>
         </div>
 
     </div>
