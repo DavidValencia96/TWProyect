@@ -7,7 +7,7 @@
         <header>
             <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp"
                 alt="twitter logo">
-            <h1 class="titleTweet">Registrate en aPP</h1>
+            <h1 class="titleTweet">Registrate en TW_MAD</h1>
         </header>
 
         <form method="post">
@@ -15,7 +15,7 @@
             {% csrf_token %}  {% comment %} Incluimos el token {% endcomment %}
 
             <div class="input-wrapper">
-                <label for="user-name-id" class="input-group-text">Nombres</label>
+                <label for="user-name-id" class="input-group-text">Nombres y apellidos</label>
                 {{ form.first_name }}              
             </div>
             <div class="input-wrapper">
@@ -23,7 +23,7 @@
                 {{ form.username }}
             </div>
             <div class="input-wrapper">
-                <label for="user-name-id" class="input-group-text">Email</label>
+                <label for="user-name-id" class="input-group-text">E-mail</label>
                 {{form.email }}
             </div>
 
@@ -37,7 +37,7 @@
             </div>
              {% comment %} mensaje de error de usuario o contraseña {% endcomment %}
              {% if form.errors %}
-                <p>Valida los datos ingresados</p>
+                <p>Por favor valida los datos ingresados</p>
             {% endif %}
 
             <button class="twitter-btn">Registrarse</button>
